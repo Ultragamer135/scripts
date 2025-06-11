@@ -4,5 +4,6 @@ function yass
     if not isatty stdin
         read argv
     end
-    yay -Ssq $argv | fzf -m -e
+    set pacman (which yay pacman 2>/dev/null)[1]
+    $pacman -Ssq $argv | fzf -m -e
 end
